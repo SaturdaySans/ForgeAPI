@@ -1,0 +1,10 @@
+services:
+  forge-api:
+    build: .
+    ports:
+      - "${PORT:-3000}:3000"
+    environment:
+      - PORT=3000
+      - LOG_LEVEL=info
+      - LOG_LIMIT=100
+    restart: unless-stopped
