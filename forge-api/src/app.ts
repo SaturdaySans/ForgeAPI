@@ -4,6 +4,8 @@ import helmet from "helmet"
 import healthRouter from "./routes/health"
 import uuidRouter from "./routes/uuid"
 import hashRouter from "./routes/hash"
+import encodeRouter from "./routes/encode"
+import jsonRouter from "./routes/json"
 
 
 const app = express()
@@ -28,9 +30,15 @@ app.use('/uuid', uuidRouter)
 app.use('/hash', hashRouter)
 
 // POST /encode / POST /decode    Base64 or URL encoding
+app.use('/encode', encodeRouter)
+
 // POST /json/format    prettify + validate JSON
+app.use('/json', jsonRouter)
+
 // POST /diff     compare two strings/JSON blobs, return diff
+
 // GET /timestamp 
+
 // GET /logs   last N requests
 
 
