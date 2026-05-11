@@ -6,6 +6,8 @@ import uuidRouter from "./routes/uuid"
 import hashRouter from "./routes/hash"
 import encodeRouter from "./routes/encode"
 import jsonRouter from "./routes/json"
+import diffRouter from "./routes/diff"
+import timestampRouter from './routes/timestamp'
 
 
 const app = express()
@@ -36,8 +38,10 @@ app.use('/encode', encodeRouter)
 app.use('/json', jsonRouter)
 
 // POST /diff     compare two strings/JSON blobs, return diff
+app.use('/diff', diffRouter)
 
 // GET /timestamp 
+app.use('/timestamp', timestampRouter)
 
 // GET /logs   last N requests
 
